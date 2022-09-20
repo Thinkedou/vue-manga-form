@@ -61,26 +61,28 @@
     methods:{
      async handleSaveBtn(){
         
-        console.log('Je vais creer > ', this.manga)
-        // > je vais faire mon POST sur mon api 
-       
+        
+        
         if(this.onEdit){
+          // > je vais faire mon PUT sur mon api  
           await this.editOneManga()
         }else{
+          // > je vais faire mon POST sur mon api     
           await this.createNewManga()
         }
       },
-      setMangaType(){
-
-      },
       async createNewManga(){
         console.warn('ici en create')
+        console.log(this.manga)
+      },
+      async editOneManga(){
+        console.warn('ici en edit')
         console.log(this.manga)
       }
 
     },
     async created(){
-      this.setMangaType()
+      
     }
   }
   </script>
